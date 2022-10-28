@@ -1,0 +1,51 @@
+Dicas de uso do aplicativo.
+
+Para alterar a logo, basta substituir imagem.jpg na pasta ícones.(tamanho máximo da imagem é de 300(altura) x 600(Largura) ).
+
+Instale o servidor xampp ou wampp de acordo com a versão do seu sistema operacional
+https://www.apachefriends.org/download.html
+
+Instale o MySql-workbank para a versão do seu sistema operacional.
+https://dev.mysql.com/downloads/workbench/
+
+
+Coloque em execução os serviços Apache(porta 80, 443) e MySQL(porta 3306)
+
+Faça uma nova conexão no MySql-workbank com o nome Portaria.
+Crie a base de dados na conexão.
+Apenas copie e cole todo o código a seguir na query aberta e execute.
+
+CREATE SCHEMA Portaria;
+use Portaria;
+
+CREATE TABLE MOVIMENTO (
+    ID_MOVIMENTO   INTEGER NOT NULL,
+    COD_VISITANTE  INTEGER,
+    NOME           VARCHAR(50),
+    CPF            VARCHAR(14),
+    COD_VEICULO    INTEGER,
+    MARCA          VARCHAR(50),
+    MODELO         VARCHAR(50),
+    PLACA          VARCHAR(10),
+    HORA_ENTRADA   VARCHAR(10),
+    HORA_SAIDA     VARCHAR(10),
+    MOTIVO         VARCHAR(100),
+    DATA           DATE
+);
+
+
+CREATE TABLE VEICULO (
+    COD_VEICULO  INTEGER NOT NULL,
+    MARCA        VARCHAR(50),
+    MODELO       VARCHAR(50),
+    PLACA        VARCHAR(10)
+);
+
+
+
+CREATE TABLE VISITANTE (
+    COD_VISITANTE    INTEGER NOT NULL,
+    NOME             VARCHAR(50),
+    DATA_NASCIMENTO  VARCHAR(10),
+    CPF              VARCHAR(14)
+);
